@@ -10,7 +10,13 @@ form.addEventListener("submit", search);
 let now = new Date();
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let days = [
   "Sunday",
   "Monday",
@@ -18,11 +24,26 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
+];
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 let day = days[now.getDay()];
+let month = months[now.getMonth()];
 let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML = `Today is ${day} ${date}, ${hours}:${minutes}`;
+currentDate.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}`;
 
 let curTemp = 24;
 let displaydTemp = document.querySelector("#temperature");
