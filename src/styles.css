@@ -42,6 +42,10 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+.weather-forecast {
+  margin-top: 40px;
+  text-align: center;
+}
 footer {
   text-align: center;
 }
